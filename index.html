@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 EFSI</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+   
+    <h1>Tus notas app</h1>
+ 
+    <h2>Formulario</h2>
+    <p>Porfavor ingrese sus notas!</p>
+    <form id="formNotas" >
+       
+        <div>
+            <label for="">Nota de matematica</label>
+            <input type="number" required id="iptMatematica">
+        </div>
+ 
+        <div>
+            <label for="">Nota de Lengua</label>
+            <input type="number" required id="iptLengua">
+        </div>
+ 
+        <div>
+            <label for="">Nota de EFSI</label>
+            <input type="number" required id="iptEFSI">
+        </div>
+       
+        <button type="submit">Enviar notas</button>
+    </form>
+ 
+    <!-- Mostrar y no mostrar con display -->
+    <div>
+        <h2>Mis notas</h2>
+ 
+        <p>Nota matematica: <span id="notaMatematica"></span></p>
+        <p>Nota lengua: <span id="notaLengua"></span></p>
+        <p>Nota EFSI: <span id="notaEfsi"></span></p>
+        <p>Promedio: <span id="notaPromedio"></span></p>
+
+        <!-- Hacer botones funcionales -->
+        <!-- PARA ESTO SACAR EL CALCULAR PROM DE CONSTRUCTOR Y LLAMARLO EN EL ONCLICK COMO FUNCION -->
+        <button>Calcular promedio</button>
+        <button>Materia/s con mayor nota</button>
+
+        
+        <img id="reaccionGif" src="https://acegif.com/wp-content/uploads/2021/4fh5wi/bienvnds-15.gif" alt="bienvenida">
+    </div>
+ 
+    <script src="./js/notas.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
