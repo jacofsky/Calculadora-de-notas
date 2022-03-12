@@ -24,5 +24,7 @@
 - Ademas del div con los texto sumar una imagen que represente lo ocurrido al presionar cada boton. [✔]
 - la imagen deberia comenzar mostrando algo de bienvenida, y se ira modificando segun las acciones que se realicen. [✔]
 
+***
 
+[🖥] Subido a Netlify: https://calculador-de-notas-efsi.netlify.app/
 
