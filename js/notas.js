@@ -20,9 +20,6 @@ class Notas {
         let notaMayor = 0
         let notaIndice = []
 
-        
-        console.log(Math.max(...notas))
-
         for (let i = 0; i < notas.length; i++) {
 
 

@@ -5,7 +5,6 @@ const inputLengua = document.querySelector("#iptLengua")
 const inputEfsi = document.querySelector("#iptEFSI")
 
 const validarCampo = (num) => {
-    console.log(num)
     if (num > 10 || num < 1) {
         return true
     }
@@ -105,7 +104,6 @@ const habilitarButtons = (notas) => {
     btnProm.addEventListener("click", () => mostrarPromedio(notas))
     btnMateria.addEventListener("click", () => mostrarMaterias(notas))
 
-    console.log(notas)
     btnProm.disabled = false
     btnMateria.disabled = false
 
