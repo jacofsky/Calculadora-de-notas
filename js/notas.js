@@ -16,6 +16,7 @@ class Notas {
     calcularMayorNota() {
 
         const notas = [this.matematica, this.lengua,this.efsi]
+        const notasNombre = ["Matematica", "Lengua", "EFSI"]
         let notaMayor = 0
         let notaIndice = []
 
@@ -34,10 +35,11 @@ class Notas {
         for (let i = 0; i < notas.length; i++) {
             
             if (notaMayor === notas[i]) {
-                notaIndice.push(i)
+                notaIndice.push(notasNombre[i])
             }
 
         }
+
 
         return notaIndice
     }

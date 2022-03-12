@@ -1,7 +1,24 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #A6E3E9;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
 input {
     outline: none;
 }
-
 
 .input-Invalid {
     border: .2rem red solid;
@@ -10,3 +27,87 @@ input {
 .input-Valid {
     border: .2rem green solid;
 }
+
+
+
+/* ----------- FORMULARIO ----------- */
+
+.formulario {
+    background-color: #71C9CE;
+    width: 20rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    
+}
+
+img {
+    width: 100%;
+}
+
+input {
+    width: 90%;
+    text-align: center;
+    margin: .3rem 0;
+    border-radius: 2rem;
+    height: 2rem;
+    border: transparent solid .2rem;
+    transition: all .5s;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: #E3FDFD;
+    border: 0;
+    margin: .75rem 0;
+    padding: .5rem;
+    border-radius: 2rem;
+    font-weight: bolder;
+    transition: all .4s;
+    border: .2rem transparent solid;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: #CBF1F5;
+}
+
+button:active {
+    background-color: #43868a;
+    border: .2rem #CBF1F5 solid;
+    color: #CBF1F5;
+}
+
+p {
+    margin: .5rem .5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.misNotas{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+img {
+    border-radius: .5rem;
+}
+
+.buttonsDisplay {
+    transition: all .5s;
+}
+
+ul {
+   list-style: none; 
+    padding: 0;
+}
+
+ul li {
+    margin: .5rem 0;
+ }

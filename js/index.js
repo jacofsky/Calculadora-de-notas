@@ -20,9 +20,9 @@ const imprimirError = (inpt) => {
     }
 }
 
-inputMatematica.addEventListener("change", () => imprimirError(inputMatematica))
-inputLengua.addEventListener("change", () => imprimirError(inputLengua))
-inputEfsi.addEventListener("change", () => imprimirError(inputEfsi))
+inputMatematica.addEventListener("input", () => imprimirError(inputMatematica))
+inputLengua.addEventListener("input", () => imprimirError(inputLengua))
+inputEfsi.addEventListener("input", () => imprimirError(inputEfsi))
 
 // --------------------- VALIDACION FORMULARIO ---------------------
 
@@ -41,8 +41,8 @@ const validarForm = (e) => {
         
     } else {
         const notas = new Notas(inputMatematica.value, inputLengua.value, inputEfsi.value )
-        console.log(notas)
         modificarHtml(notas)
+        habilitarButtons(notas)
     }
     
 }
@@ -62,41 +62,72 @@ const modificarHtml = (notas) => {
     spanMatematica.innerHTML = notas.matematica
     spanLengua.innerHTML = notas.lengua
     spanEfsi.innerHTML = notas.efsi
-    spanPromedio.innerHTML = notas.promedio
+    
 
-    if (notas.promedio >= 6) {
-        spanPromedio.style.color = "green"
-        gif.setAttribute("src", "https://i.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.webp")
-        gif.setAttribute("alt", "Buen trabajo!")
-
-    } else {
-        spanPromedio.style.color = "red"
-        gif.setAttribute("src", "https://i.giphy.com/l2Jeev6AvurRQMgEM.gif")
-        gif.setAttribute("alt", "Sigue intentando!")
-    }
-
-    console.log(notas.notaMayor.includes(1))
-
-    if (notas.notaMayor.includes(0)) {
+    if (notas.notaMayor.includes("Matematica")) {
         spanMatematica.style.color = "blue"
 
     } else {
         spanMatematica.style.color = "black"
     }
 
-    if (notas.notaMayor.includes(1)) {
+    if (notas.notaMayor.includes("Lengua")) {
         spanLengua.style.color = "blue"
 
     } else {
         spanLengua.style.color = "black"
     }
 
-    if (notas.notaMayor.includes(2)) {
+    if (notas.notaMayor.includes("EFSI")) {
         spanEfsi.style.color = "blue"
 
     } else {
         spanEfsi.style.color = "black"
     }
+
+    displayButtons.innerHTML = ''
+    gif.setAttribute("src", "https://acegif.com/wp-content/uploads/2021/4fh5wi/bienvnds-15.gif")
+    gif.setAttribute("alt", "Bienvenido!")
     
 
+}
+
+
+// --------------------- PROMEDIOS Y NOTA MAYOR ---------------------
+
+const btnProm = document.querySelector("#btnCalcularPromedio")
+const btnMateria = document.querySelector("#btnMateriaMayorNota")
+
+const displayButtons = document.querySelector("#buttonsDisplay")
+
+
+const habilitarButtons = (notas) => {
+    btnProm.addEventListener("click", () => mostrarPromedio(notas))
+    btnMateria.addEventListener("click", () => mostrarMaterias(notas))
+
+    console.log(notas)
+    btnProm.disabled = false
+    btnMateria.disabled = false
+
+    
+}
+
+const mostrarPromedio = (notas) => {
+    displayButtons.innerHTML = `<p>Promedio: ${notas.promedio.toFixed(2)}</p>`
+
+    if (notas.promedio >= 6) {
+        displayButtons.style.color = "green"
+        gif.setAttribute("src", "https://i.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.webp")
+        gif.setAttribute("alt", "Buen trabajo!")
+
+    } else {
+        displayButtons.style.color = "red"
+        gif.setAttribute("src", "https://i.giphy.com/l2Jeev6AvurRQMgEM.gif")
+        gif.setAttribute("alt", "Sigue intentando!")
+    }
+}
+
+const mostrarMaterias = (notas) => {
+    displayButtons.style.color = "black"
+    displayButtons.innerHTML = `<ul>${notas.notaMayor.map(nota => `<li>${nota}</li>`).flat().join('')}</ul>`
 }
