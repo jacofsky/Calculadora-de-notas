@@ -38,7 +38,7 @@ input {
     margin: 1rem auto;
     padding: 1rem;
     border-radius: .5rem;
-    
+    box-shadow: 2px 5px 33px 0px #71C9CE;
 }
 
 img {
@@ -110,4 +110,4 @@ ul {
 
 ul li {
     margin: .5rem 0;
- }
+}
