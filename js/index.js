@@ -13,7 +13,7 @@ const validarCampo = (num) => {
 }
 
 const imprimirError = (inpt) => {
-    if (validarCampo(inpt.value)) {
+    if (validarCampo(parseInt(inpt.value))) {
         inpt.setAttribute("class", "input-Invalid")
     } else {
         inpt.setAttribute("class", "input-Valid")
@@ -30,17 +30,17 @@ const form = document.querySelector("#formNotas")
 
 const validarForm = (e) => {
     e.preventDefault()
-    if (validarCampo(inputMatematica.value)) {
+    if (validarCampo(parseInt(inputMatematica.value))) {
         alert("Dato invalido en: Matematica")
 
-    } else if (validarCampo(inputLengua.value)) {
+    } else if (validarCampo(parseInt(inputLengua.value))) {
         alert("Dato invalido en: Lengua")
 
-    } else if (validarCampo(inputEfsi.value)) {
+    } else if (validarCampo(parseInt(inputEfsi.value))) {
         alert("Dato invalido en: EFSI")
         
     } else {
-        const notas = new Notas(inputMatematica.value, inputLengua.value, inputEfsi.value )
+        const notas = new Notas(parseInt(inputMatematica.value), parseInt(inputLengua.value), parseInt(inputEfsi.value) )
         modificarHtml(notas)
         habilitarButtons(notas)
     }
@@ -128,6 +128,6 @@ const mostrarPromedio = (notas) => {
 }
 
 const mostrarMaterias = (notas) => {
-    displayButtons.style.color = "black"
+    displayButtons.style.color = "blue"
     displayButtons.innerHTML = `<ul>${notas.notaMayor.map(nota => `<li>${nota}</li>`).flat().join('')}</ul>`
 }

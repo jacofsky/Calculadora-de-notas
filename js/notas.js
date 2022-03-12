@@ -10,7 +10,7 @@ class Notas {
     }
 
     calcularPromedio() {
-        return (parseInt(this.matematica) + parseInt(this.lengua) + parseInt(this.efsi)) / 3
+        return (this.matematica + this.lengua + this.efsi) / 3
     }
 
     calcularMayorNota() {
